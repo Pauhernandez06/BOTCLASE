@@ -1,0 +1,37 @@
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Hola, soy un bot!, A continuación verás la lista de comandos!, 1.$hello = repetiras la lista de comandos, 2. $aburrido = te dará un chiste(si escribes numeros del 1 al 10 al  lado de aburrido te dara diferentes chistes), 3. $clima = te dira el clima')
+
+@bot.command()
+async def aburrido(ctx):
+    await ctx.send("¿Cuál es el último animal que subió al arca de Noé? El del-fin. JAJAJAJA")
+
+@bot.command()
+async def aburrido1(ctx):
+    await ctx.send("¿Cómo se dice disparo en árabe? Ahí-va-la-bala. JAJAJAJA")
+
+@bot.command()
+async def aburrido2(ctx):
+    await ctx.send("Si se muere una pulga, ¿a dónde va? Al pulgatorio. JAJAJAJA")
+
+@bot.command()
+async def aburrido3 (ctx):
+    await ctx.send("Si se muere una pulga, ¿a dónde va? Al pulgatorio. JAJAJAJA")
+
+@bot.command()
+async def clima(ctx):
+    await ctx.send("buscalo en tu computadora en la parte de abajo o copia y pega este link en tu buscador : https://www.google.com/search?q=clima+en+mi+ubicaci%C3%B3n&rlz=1C1ONGR_esMX1022MX1022&oq=clima+&gs_lcrp=EgZjaHJvbWUqDAgEEAAYQxiABBiKBTIHCAAQABiPAjIMCAEQIxgnGIAEGIoFMgcIAhAAGIAEMgwIAxAAGEMYgAQYigUyDAgEEAAYQxiABBiKBTIHCAUQABiABDIHCAYQABiABDINCAcQABiDARixAxiABDIQCAgQABiDARixAxjJAxiABDINCAkQABiDARixAxiABNIBCTQzMDBqMGoxNagCALACAA&sourceid=chrome&ie=UTF-8 ")
+
+bot.run("
